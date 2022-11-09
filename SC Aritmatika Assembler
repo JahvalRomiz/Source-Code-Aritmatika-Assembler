@@ -1,0 +1,52 @@
+# a program to show arithmetic instructions in AL
+
+# addition
+mov ax, 5   # load number in ax
+mov bx, 2   # load number in bx
+add ax, bx  # accumulate sum in ax
+
+# subtraction
+mov cx, 10  
+mov dx, 3   
+sub cx, dx  # accumulate difference in cx
+
+# refreshing registers
+mov ax, 0
+mov bx, 0
+mov cx, 0
+mov dx, 0
+
+# multiplication - 8 bit source
+mov al, 5
+mov bl, 10
+mul bl      # result in ax
+
+# refreshing registers
+mov ax, 0
+mov bx, 0
+
+# multiplication - 16 bit source
+mov ax, 5
+mov bx, 10
+mul bx      # result in dx:ax
+
+# refreshing registers
+mov ax, 0
+mov bx, 0
+
+# divison - 8 bit source
+mov al, 23
+mov bl, 4
+div bl      # quotient in al, remainder in ah
+
+# refreshing registers
+mov ax, 0
+mov bx, 0
+
+# divison - 16 bit source
+mov ax, 23
+mov bx, 4
+div bx      # quotient in ax, remainder in dx
+
+mov ax, 0x4c00  # terminate program
+int 0x21
